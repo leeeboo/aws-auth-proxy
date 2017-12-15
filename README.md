@@ -1,7 +1,5 @@
 #aws-auth-proxy
 
-[![Docker Repository on Quay](https://quay.io/repository/coreos/aws-auth-proxy/status "Docker Repository on Quay")](https://quay.io/repository/coreos/aws-auth-proxy)
-
 ##Installation
 
 pre-reqs:
@@ -12,12 +10,12 @@ pre-reqs:
 #requires go1.5
 export GO15VENDOREXPERIMENT=1
 
-mkdir -p $GOPATH/src/github.com/coreos
-cd $GOPATH/src/github.com/coreos
-git clone https://github.com/coreos/aws-auth-proxy
+mkdir -p $GOPATH/src/github.com/leeeboo
+cd $GOPATH/src/github.com/leeeboo
+git clone https://github.com/leeeboo/aws-auth-proxy
 cd aws-auth-proxy
 glide install
-go build github.com/coreos/aws-auth-proxy
+go build github.com/leeeboo/aws-auth-proxy
 ```
 ##Example
 
