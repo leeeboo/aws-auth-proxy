@@ -1,5 +1,7 @@
 #aws-auth-proxy
 
+[![Docker Repository on Quay](https://quay.io/repository/leeeboo/aws-auth-proxy/status "Docker Repository on Quay")](https://quay.io/repository/leeeboo/aws-auth-proxy)
+
 ##Installation
 
 pre-reqs:
