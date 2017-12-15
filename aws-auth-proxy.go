@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"os"
-	"time"
 	"net/http"
 	"net/url"
+	"os"
+	"time"
 
 	"github.com/coreos/pkg/flagutil"
-	"github.com/crowdmob/goamz/aws"
+	"github.com/leeeboo/goamz/aws"
 )
 
 func main() {
