@@ -1,5 +1,5 @@
 FROM golang:1.5.2
-MAINTAINER colin.hom@coreos.com
+MAINTAINER leeeboo
 
 ENV GO15VENDOREXPERIMENT=1
 
@@ -10,12 +10,12 @@ RUN git clone https://github.com/Masterminds/glide
 WORKDIR glide
 RUN make bootstrap
 RUN make install
-RUN mkdir -p $GOPATH/src/github.com/coreos
+RUN mkdir -p $GOPATH/src/github.com/leeeboo
 
-WORKDIR $GOPATH/src/github.com/coreos
+WORKDIR $GOPATH/src/github.com/leeeboo
 ADD . ./aws-auth-proxy
 WORKDIR ./aws-auth-proxy
 RUN glide install
-RUN go install github.com/coreos/aws-auth-proxy
+RUN go install github.com/leeeboo/aws-auth-proxy
 
 ENTRYPOINT ["aws-auth-proxy"]

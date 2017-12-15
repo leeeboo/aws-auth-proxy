@@ -3,6 +3,6 @@ import:
 - package: github.com/coreos/pkg
   subpackages:
   - /flagutil
-- package: github.com/crowdmob/goamz
+- package: github.com/leeeboo/goamz
   subpackages:
   - /aws
