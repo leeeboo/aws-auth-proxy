@@ -1,21 +1,13 @@
-FROM golang:1.5.2
+FROM golang:1.9.2-alpine3.7
 MAINTAINER leeeboo
 
-ENV GO15VENDOREXPERIMENT=1
+RUN apk add --update ca-certificates
 
-WORKDIR $GOPATH
-RUN mkdir -p ./src/github.com/Masterminds
-WORKDIR $GOPATH/src/github.com/Masterminds
-RUN git clone https://github.com/Masterminds/glide
-WORKDIR glide
-RUN make
-RUN make install
 RUN mkdir -p $GOPATH/src/github.com/leeeboo
 
 WORKDIR $GOPATH/src/github.com/leeeboo
 ADD . ./aws-auth-proxy
 WORKDIR ./aws-auth-proxy
-RUN glide install
 RUN go install github.com/leeeboo/aws-auth-proxy
 
 ENTRYPOINT ["aws-auth-proxy"]
