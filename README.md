@@ -21,9 +21,25 @@ go build github.com/leeeboo/aws-auth-proxy
 ```
 ##Example
 
+Go
+
 ```sh
 # aws elasticsearch example
 ./aws-auth-proxy \
+-access-key=xxx \
+-secret-key=xxxx \
+-service-name=es \
+-region-name=<your-aws-region> \
+-upstream-host=<your-aws-elastic-search-endpoint> \
+-upstream-scheme=https \
+-listen-address=":9200"
+```
+
+Docker
+
+```sh
+# aws elasticsearch example
+docker run -it --rm -p 9200:9200 leeeboo/aws-auth-proxy \
 -access-key=xxx \
 -secret-key=xxxx \
 -service-name=es \
@@ -37,6 +53,3 @@ Your proxied elasticsearch endpoint is now here: [http://localhost:9200](http://
 
 
 No more securing elastic search endpoints with IP addresses!
-
-
-
